@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/fontawesome-free-6.2.1-web/css/all.min.css">
+    <link rel="stylesheet" href="scroll.css">
+    <link rel="stylesheet" href="trangchu.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.8.0/angular-route.min.js"></script>
+
+</head>
+
+<body style="position: relative;" ng-app="asm" ng-controller="asm">
+    <header class="bg-dark fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 p-3">
+                    <img src="img/LOGO.png" alt="" style="height: 80px;">
+                </div>
+
+                <div class="col-9">
+                    <div class="navbar navbar-expand-sm">
+                        <ul class="navbar-nav">
+                            <div ng-hide="isLogin">
+                                <button class="btn btn-success ml-2 mr-2" data-toggle="modal"
+                                    data-target="#exampleModal">Đăng Nhập</button>
+                                <button class="btn btn-danger ml-2 mr-2 " data-toggle="modal"
+                                    data-target="#exampleModal1">Đăng Ký Miễn Phí</button>
+                            </div>
+                            <div id="memberInfo" class="mr-2 text-danger" ng-show="isLogin">
+                                <em>
+                                    <h3> Xin Chào {{ht}}</h3>
+                                </em>
+                            </div>
+                            <em class="text-white mt-2 ml-2"><i class="far fa-comments"></i>
+                                Hỗ trợ trực tuyến</em>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/english">English</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/vietnamese">Tiếng Việt</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <nav class="navbar navbar-expand-sm">
+                        <!-- Links -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#!/"> <i class="fas fa-home"></i> Trang
+                                    Chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#!gioithieu"><i class="fas fa-list-alt"></i> Giới
+                                    Thiệu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#!khoahoc"><i class="fas fa-list-alt"></i> Khóa
+                                    Học</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#!lienhe"> <i class="fas fa-phone"></i> Liên Hệ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/faq"> <i class="fas fa-question"></i> Hỏi Đáp</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav nav-item dropdown ml-auto">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbardrop"
+                                data-toggle="dropdown"> <i class="fas fa-user"></i>
+                                Tài Khoản
+                            </a>
+                            <div class="dropdown-menu">
+                                <div ng-hide="isLogin">
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#exampleModal">Đăng
+                                        Nhập</a>
+                                    <a class="dropdown-item" href="/link2">Quên Mật Khẩu</a>
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#exampleModal1">Đăng Ký
+                                        Thành Viên</a>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <div ng-show="isLogin">
+                                    <a class="dropdown-item" ng-click="dangxuat()">Đăng Xuất</a>
+                                    <a class="dropdown-item" href="/link2">Đổi Mật Khẩu</a>
+                                    <a class="dropdown-item" href="/link3">Cập Nhật Hồ Sơ</a>
+                                </div>
+
+                            </div>
+                        </ul>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="demo" class="carousel slide" data-ride="carousel" style="margin-top: 100px;">
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="text-center text-danger text-uppercase pt-5"
+                    style="height: 550px; background-image: url(img/to-learn3.jpg); background-size: cover;">
+                    <b>
+                        <h1>Nền tảng luyện thi trực tuyến hàng đầu</h1>
+                    </b>
+                    <img class="mt-3" src="img/LOGO.png" alt="">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div style="height: 550px; background-image: url(img/woman2.jpg); background-size: cover;"></div>
+            </div>
+            <div class="carousel-item">
+                <div style="height: 550px; background-image: url(img/graduation2.jpg); background-size: cover;"></div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+
+    </div>
+
+    <div class="container card border shadow d-flex justify-content-center"
+        style="min-height: 150px; position: absolute; top: 500px; left: 50%; transform: translateX(-50%); display: flex;">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="row">
+                    <div class="col-4 text-center"><img src="img/icons8-android-70.png" alt=""></div>
+                    <div class="col-8 d-flex align-items-center"><b>Đa nền tảng</b></div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="row">
+                    <div class="col-4 text-center"><img src="img/icons8-image-70.png" alt=""></div>
+                    <div class="col-8 d-flex align-items-center"><b>Hình ảnh chất lượng</b></div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="row">
+                    <div class="col-4 text-center"><img src="img/icons8-shortlist-70.png" alt=""></div>
+                    <div class="col-8 d-flex align-items-center"><b>Nội dung phong phú</b></div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="row">
+                    <div class="col-4 text-center"><img src="img/icons8-support-70 (1).png" alt=""></div>
+                    <div class="col-8 d-flex align-items-center"><b>Đội ngũ hỗ trợ tận tâm</b></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 0;">
+        <div class="col-sm-6" style="height: 150px;"></div>
+        <div class="col-sm-6" style="height: 150px;"></div>
+    </div>
+    <div class="main" ng-view>
+
+    </div>
+
+    <footer class="row" style="margin: 0; background: rgba(176, 176, 182, 0.308);">
+        <div class="col-3 p-5"><img src="img/LOGO.png" alt=""></div>
+        <div class="col-3 p-5">
+            <h6><b>Menu</b></h6>
+            <ul class="pl-4">
+                <li>Trang Chủ</li>
+                <li>Giới Thiệu</li>
+                <li>Khóa Học</li>
+                <li>Liên Hệ</li>
+                <li>Góp ý</li>
+                <li>Hỏi Đáp</li>
+            </ul>
+        </div>
+        <div class="col-3 p-5">
+            <h6><b>Dịch vụ của chúng tôi</b></h6>
+            <ul class="pl-4">
+                <li>Đào Tạo Trực Tuyến</li>
+                <li>Hỗ Trợ Luyện Thi</li>
+                <li>Tư Vấn Giáo Dục</li>
+                <li>Cung Cấp Tài Liệu</li>
+                <li>Thiết Kế Bài Giảng</li>
+                <li>Định Hướng Chuyên Nghành</li>
+            </ul>
+        </div>
+        <div class="col-3 p-5">
+            <h6><b>Get Apps</b></h6>
+            <img class="m-2" src="https://quizizz.com/wf/assets/62fa641a161d3a2982681d00_Google_Play.svg" alt="">
+            <img class="m-2" src="https://quizizz.com/wf/assets/62fa641a161d3a2982681d00_Google_Play.svg" alt="">
+        </div>
+    </footer>
+
+    <!-- Modal Dang Nhap-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="card border-0 shadow" style="background-color: rgba(176, 176, 182, 0.308);">
+                    <div class="card-body p-5">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h3 class="card-title text-center mb-3 fw-light fs-5">Đăng Nhập</h3>
+                        <hr class="bg-danger">
+                        <form>
+                            <div class="mb-3">
+                                <label for="floatingInput">Địa chỉ Email</label>
+                                <input class="form-control" id="floatingInput" placeholder="name@example.com"
+                                    ng-model="email">
+                            </div>
+                            <div class="form-floating mb-3">
+                                <label for="floatingPassword">Mật Khẩu</label>
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                                    ng-model="password">
+                            </div>
+
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                                <label class="form-check-label" for="rememberPasswordCheck">
+                                    Lưu Mật Khẩu
+                                </label>
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-success btn-login text-uppercase fw-bold w-100" type="submit"
+                                    id="btnDn" ng-click="dangnhap()">Đăng Nhập
+                                </button>
+                            </div>
+                            <hr class="my-4 bg-danger">
+                            <div class="d-grid mb-4">
+                                <button class="btn btn-danger w-100 btn-google btn-login text-uppercase fw-bold"
+                                    type="submit">
+                                    <i class="fab fa-google me-2"></i> Đăng nhập với Google
+                                </button>
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-primary w-100 btn-facebook btn-login text-uppercase fw-bold"
+                                    type="submit">
+                                    <i class="fab fa-facebook-f me-2"></i> Đăng nhập với Facebook
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Modal Dang ký-->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="col-9 m-auto">
+            <div class=" modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="container" style="position: relative;">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="position: absolute;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="row p-5" style="margin: 0;">
+                            <div class="col-md-4 register-left">
+                                <h3>Welcome</h3>
+                                <img class="w-100" src="img/board-gdb.jpg" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <h3>Đăng Ký Thành Viên</h3>
+                                <form name="frmDangky" class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Username *"
+                                                ng-model="student.username" ng-required="true">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Full Name *"
+                                                ng-model="student.fullname" ng-required="true">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Password *"
+                                                ng-model="student.password" ng-required="true">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Confirm Password *"
+                                                ng-model="confirmpassword" ng-required="true">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Your Email *"
+                                                ng-model="student.email" ng-required="true">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" minlength="10" maxlength="10" name="txtEmpPhone"
+                                                class="form-control" placeholder="Your Phone *">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="birthdate" name="birthdate" class="form-control"
+                                                placeholder="Birthdate *" ng-model="student.birthday"
+                                                ng-required="true">
+                                        </div>
+                                        <div class="form-group mb-0 mt-4">
+                                            <div class="maxl">
+                                                <label class="radio inline">
+                                                    <input type="radio" name="gender" value="true"
+                                                        ng-model="student.gender" checked>
+                                                    <span> Male </span>
+                                                </label>
+                                                <label class="radio inline">
+                                                    <input type="radio" name="gender" value="false"
+                                                        ng-model="student.gender">
+                                                    <span>Female </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <button id="btnDk" class="btn btn-danger" ng-click="dangky()">Đăng Ký</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+<!-- Bao gồm các tệp CSS và JS của jQuery UI và jQuery -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+<script>
+    // Gọi hàm datepicker() trên ô nhập liệu với id="birthdate"
+    $(function () {
+        $("#birthdate").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "1900:c",
+            dateFormat: "yy-mm-dd"
+        });
+    });
+</script>
+<script src="db/Subjects.js"></script>
+<script>
+    var app = angular.module("asm", ["ngRoute"]);
+    app.config(function ($routeProvider) {
+        $routeProvider
+            .when("/", { templateUrl: "trangchu.html" })
+            .when("/khoahoc", { templateUrl: "khoahoc.html" })
+            .when("/gioithieu", { templateUrl: "gioithieu.html" })
+            .when("/lienhe", { templateUrl: "lienhe.html" })
+            .when("/tracnghiem/:idMH/:tenMH", { templateUrl: "tracnghiem.html", controller: "tnctrl" })
+
+    })
+
+
+    app.controller("tnctrl", function ($scope, $http, $routeParams, $timeout) {
+        $scope.caccauhoi = [];
+        $scope.idMH = $routeParams.idMH
+        $scope.tenMH = $routeParams.tenMH;
+        $http.get("/db/Quizs/" + $scope.idMH + ".js").then(
+            function (d) { $scope.caccauhoi = d.data; },
+            function (d) { alert("Lỗi") },
+        );
+        $scope.diem = 0;
+        $scope.answer = function (index, asw) {
+            if ($scope.caccauhoi[index].AnswerId == asw) {
+                var element = document.getElementById(index)
+                element.style.backgroundColor = "green";
+                var radioButtons = document.getElementsByName(index)
+                for (var i = 0; i < radioButtons.length; i++) {
+                    radioButtons[i].disabled = true;
+                }
+                $scope.diem++;
+
+            } else {
+                var element = document.getElementById(index)
+                element.style.backgroundColor = "red";
+                var radioButtons = document.getElementsByName(index)
+                for (var i = 0; i < radioButtons.length; i++) {
+                    radioButtons[i].disabled = true;
+                }
+            }
+
+        }
+
+        var thoiluong = 600;
+        var demnguocTimeout;
+
+        $scope.sophut = Math.floor(thoiluong / 60);
+        $scope.sogiay = thoiluong % 60;
+        $scope.isRunning = false;
+
+        $scope.start = function () {
+            if ($scope.isLogin) {
+                $scope.showQuestions = true;
+                $scope.isRunning = true;
+                var element = document.getElementById("btnStart")
+                element.disabled = true;
+                demnguoc();
+            }else(alert(" Vui long dang nhap"))
+
+        };
+
+        $scope.stop = function () {
+            $scope.hiendiem = true;
+            $scope.isRunning = false;
+            $timeout.cancel(demnguocTimeout);
+            var element = document.getElementById("btnStart")
+            element.disabled = true;
+            $scope.isDisable = true;
+        };
+
+        function demnguoc() {
+            thoiluong--;
+            $scope.sophut = Math.floor(thoiluong / 60);
+            $scope.sogiay = thoiluong % 60;
+            if (thoiluong > 0 && $scope.isRunning) {
+                demnguocTimeout = $timeout(demnguoc, 1000);
+            } else {
+                $scope.isRunning = false;
+                alert("Hết giờ!");
+                $scope.stop();
+            }
+        }
+
+
+
+    })
+    app.controller("asm", function ($scope, $http) {
+        $scope.cacmonhoc = [];
+        $http.get("db/Subjects.js").then(function (d) { $scope.cacmonhoc = d.data; });
+        $scope.pageSize = 6;
+        $scope.start = 0;
+        $scope.prev = function () {
+            if ($scope.start > 0)
+                $scope.start -= $scope.pageSize
+
+        }
+        $scope.next = function () {
+            if ($scope.start < $scope.cacmonhoc.length - $scope.pageSize)
+                $scope.start += $scope.pageSize
+
+        }
+
+        $scope.students = [];
+        $http.get("db/Students.js").then(function (s) { $scope.students = s.data });
+
+        $scope.dangnhap = function () {
+            $scope.isLogin = false;
+            var email = $scope.email;
+            var password = $scope.password;
+            console.log(email, password)
+            var kt = false;
+            var student;
+            for (var i = 0; i < $scope.students.length; i++) {
+                student = $scope.students[i];
+                if (email == student.email && password == student.password) {
+                    kt = true;
+                    break;
+                }
+            }
+            if (kt) {
+                $scope.isLogin = true;
+                $scope.ht = student.fullname;
+                var element = document.getElementById("btnDn");
+                element.setAttribute("data-dismiss", "modal");
+                alert("Dang nhap thanhcong")
+            } else {
+                alert("Dang nhap that bai")
+            }
+        }
+        $scope.dangxuat = function () {
+            $scope.isLogin = false;
+        }
+
+        $scope.student = {};
+        $scope.dangky = function () {
+            if (!$scope.student.username || !$scope.student.fullname || !$scope.student.password || !$scope.confirmpassword || !$scope.student.email || !$scope.student.birthday || !$scope.student.gender) {
+                alert("Vui lòng nhập đầy đủ thông tin");
+                console.log($scope.student)
+                return;
+            }
+
+            if ($scope.student.password !== $scope.confirmpassword) {
+                alert("Mật khẩu xác nhận không khớp");
+                return;
+            }
+
+            for (var i = 0; i < $scope.students.length; i++) {
+                if ($scope.student.username == $scope.students[i].username) {
+                    alert("Username đã được sử dụng")
+                    return;
+                }
+                if ($scope.student.email == $scope.students[i].email) {
+                    alert("Email đã được sử dụng")
+                    return;
+                }
+            }
+            $scope.students.push(angular.copy($scope.student));
+            $scope.isLogin = true;
+            $scope.ht = $scope.student.fullname;
+            var element = document.getElementById("btnDk")
+            element.setAttribute("data-dismiss", "modal");
+            console.log($scope.student);
+            alert("Đăng ký thành công")
+            $scope.student = {};
+        }
+    })
+</script>

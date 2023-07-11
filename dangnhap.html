@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-9 mx-auto">
+            <div class="card border-0 shadow rounded-3 mb-5" style="background-color: rgba(176, 176, 182, 0.308);">
+                <div class="card-body p-5">
+                    <h3 class="card-title text-center mb-3 fw-light fs-5">Đăng Nhập</h3>
+                    <hr class="bg-danger">
+                    <form>
+                        <div class="mb-3">
+                            <label for="floatingInput">Địa chỉ Email</label>
+                            <input class="form-control" id="floatingInput" placeholder="name@example.com" ng-model="email">
+                        </div>
+                        <div class="form-floating mb-3">
+                            <label for="floatingPassword">Mật Khẩu</label>
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" ng-model="password">
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                            <label class="form-check-label" for="rememberPasswordCheck">
+                                Lưu Mật Khẩu
+                            </label>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-success btn-login text-uppercase fw-bold w-100" type="submit" ng-click="dangnhap()">Đăng Nhập
+                            </button>
+                        </div>
+                        <hr class="my-4 bg-danger">
+                        <div class="d-grid mb-4">
+                            <button class="btn btn-danger w-100 btn-google btn-login text-uppercase fw-bold" type="submit">
+                                <i class="fab fa-google me-2"></i> Đăng nhập với Google
+                            </button>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-primary w-100 btn-facebook btn-login text-uppercase fw-bold"  type="submit">
+                                <i class="fab fa-facebook-f me-2"></i> Đăng nhập với Facebook
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

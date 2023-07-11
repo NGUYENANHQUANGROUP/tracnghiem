@@ -1,0 +1,41 @@
+<div class="row border m-2">
+    <article class="col-sm-9 ">
+        <div class="row">
+            <div class="m-2">
+                <h5><span>{{sophut}}</span>:<span>{{sogiay}}</span></h5>
+            </div>
+            <h1 class="m-auto" ng-show="hiendiem">Điểm: {{diem}}</h1>
+            <div class="ml-auto"><button class="btn btn-success m-2" id="btnStart" ng-click="start()">Bắt Đầu</button><button
+                    class="btn btn-danger m-2" ng-click="stop()">Nộp Bài</button></div>
+            <div class="card example-1 scrollbar-ripe-malinka" ng-show="showQuestions">
+                <div class="card-body p-0">
+                    <div class="card m-2" ng-repeat="(questionIndex, ch) in caccauhoi">
+                        <div class="card-header bg-custom-color" id="{{questionIndex}}"><b>Câu {{questionIndex+1}}:
+                                {{ch.Text}}</b></div>
+                        <div class="card-body">
+                            <div class="row">
+                                <p class="card-text col-3" ng-repeat="pa in ch.Answers">
+                                    <input type="radio" name="{{questionIndex}}" value="{{pa.Id}}" ng-disabled="isDisable"
+                                        ng-click="answer(questionIndex,pa.Id)"> {{pa.Text}}
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <aside class="col-sm-3">
+        <div class="card mt-2 mb-4">
+            <div class="card-header text-left text-black bg-custom-color">
+                <i class="fas fa-list"></i>
+                <b>DANH MỤC MÔN HỌC</b>
+            </div>
+            <ul class="list-group ">
+                <li class="list-group-item text-left" ng-repeat="mh in cacmonhoc|orderBy:Name" ><a
+                        href="#!tracnghiem/{{mh.Id}}/{{mh.Name}}">{{mh.Name|uppercase}}</a></li>
+            </ul>
+        </div>
+    </aside>
+</div>

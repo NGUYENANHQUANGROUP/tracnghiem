@@ -1,0 +1,158 @@
+<div style="min-height: 300px;">
+    <div class="row" style="margin: 0;">
+        <div class="col-sm-6" style="padding-left: 120px;">
+            <h3>HỌC TẬP MỌI LÚC MỌI NƠI VỚI ỨNG DỤNG CỦA<nobr class="text-danger"> ONLINE QUIZ</nobr>
+            </h3>
+            <p class="text-justify">
+                <em>Ứng dụng của chúng tôi cung cấp các bài kiểm tra trắc nghiệm để bạn có thể tự đánh giá kiến thức
+                    của
+                    mình và tìm hiểu những điểm mạnh và điểm yếu của bản thân. Ngoài ra, ứng dụng cũng cung cấp phản
+                    hồi
+                    chi tiết về các câu trả lời của bạn và giải thích về đáp án chính xác.
+                    Với chế độ học tập linh hoạt, bạn có thể tập trung vào những lĩnh vực cần cải thiện và đạt được
+                    mục
+                    tiêu học tập của mình. Với giao diện thân thiện và dễ sử dụng, ứng dụng của chúng tôi rất thích
+                    hợp
+                    cho mọi người, bất kể là học sinh, sinh viên hoặc người lớn đang học tập hoặc tìm kiếm kiến thức
+                    mới.
+                </em>
+            </p>
+            <img style="width: 150px;" src="img/google.png" alt="">
+            <img style="width: 150px;" src="img/appstore.png" alt="">
+        </div>
+        <div class="col-sm-6">
+            <iframe width="530" height="298"
+                src="https://www.youtube.com/embed/MEOn5GX_-hU?autoplay=1&mute=1&controls=0&loop=1"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+        </div>
+        <div class="container">
+
+            <h1 class="fw-light text-center text-danger text-lg-start mt-4 mb-0">Khóa Học Nổi Bật</h1>
+
+            <hr class="mt-2 mb-5">
+
+            <div class="row text-center text-lg-start">
+                <div class="col-3" ng-repeat="mh in cacmonhoc | limitTo: 8: start">
+                    <a href="#!tracnghiem/{{mh.Id}}/{{mh.Name}}" class="d-block mb-4 h-100 abc">
+                        <div class="card shadow-lg">
+                            <div class="card-body">
+                                <img src="/img/{{mh.Logo}}" alt="">
+                            </div>
+                            <div class="card-footer text-danger"><b>{{mh.Name}}</b></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="pt-3 pb-3 bg-dark text-center text-danger text-uppercase">
+        <h1 class="mb-3">Đội ngũ giảng viên</h1>
+        <div class="container bg-dark">
+            <div class="row">
+                <!-- Free Tier -->
+                <div class="col-lg-4">
+                    <div class="card mb-5 mb-lg-0 shadow-lg" style="border-radius: 30px;">
+                        <div
+                            style="height: 300px; border-radius: 30px 30px 0px 0px;; background-image: url(img/teacher2.jpg); background-size: cover;  background-clip: padding-box;">
+                        </div>
+                        <div class="card-body">
+
+                            <ul class="fa-ul">
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Single User</li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>5GB Storage</li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects
+                                </li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
+                                <li class="text-muted"><span class="fa-li"><i
+                                            class="fas fa-times"></i></span>Unlimited
+                                    Private Projects</li>
+                                <li class="text-muted"><span class="fa-li"><i
+                                            class="fas fa-times"></i></span>Dedicated
+                                    Phone Support</li>
+                                <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Free
+                                    Subdomain
+                                </li>
+                                <li class="text-muted"><span class="fa-li"><i
+                                            class="fas fa-times"></i></span>Monthly
+                                    Status
+                                    Reports</li>
+                            </ul>
+                            <div class="d-grid">
+                                <a href="#" class="btn btn-primary text-uppercase">Button</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Plus Tier -->
+                <div class="col-lg-4">
+                    <div class="card mb-5 mb-lg-0 shadow-lg" style="border-radius: 30px;">
+                        <div
+                            style="height: 300px; border-radius: 30px 30px 0px 0px;; background-image: url(img/teacher3.jpg); background-size: cover;  background-clip: padding-box;">
+                        </div>
+                        <div class="card-body">
+
+                            <ul class="fa-ul">
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>5 Users</strong>
+                                </li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>50GB Storage</li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects
+                                </li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Private
+                                    Projects
+                                </li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Dedicated Phone Support
+                                </li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Free Subdomain</li>
+                                <li class="text-muted"><span class="fa-li"><i
+                                            class="fas fa-times"></i></span>Monthly
+                                    Status
+                                    Reports</li>
+                            </ul>
+                            <div class="d-grid">
+                                <a href="#" class="btn btn-primary text-uppercase">Button</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pro Tier -->
+                <div class="col-lg-4">
+                    <div class="card shadow-lg" style="border-radius: 30px;">
+                        <div
+                            style="height: 300px; border-radius: 30px 30px 0px 0px;; background-image: url(img/teacher1.jpg); background-size: cover;  background-clip: padding-box;">
+                        </div>
+                        <div class="card-body">
+                            <ul class="fa-ul">
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited
+                                        Users</strong>
+                                </li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>150GB Storage</li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects
+                                </li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Private
+                                    Projects
+                                </li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Dedicated Phone Support
+                                </li>
+                                <li><span class="fa-li"><i
+                                            class="fas fa-check"></i></span><strong>Unlimited</strong>
+                                    Free
+                                    Subdomains</li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Monthly Status Reports
+                                </li>
+                            </ul>
+                            <div class="d-grid">
+                                <a href="#" class="btn btn-primary text-uppercase">Button</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

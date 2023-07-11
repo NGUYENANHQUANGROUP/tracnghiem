@@ -1,0 +1,35 @@
+<div class="row border m-2">
+    <article class="col-sm-9 product">
+        <div class="row mt-2 text-center">
+            <div class="col-sm-6 mb-3" ng-repeat=" mh in cacmonhoc | limitTo: pageSize: start">
+                <a href="#!tracnghiem/{{mh.Id}}/{{mh.Name}}">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="/img/{{mh.Logo}}" alt="">
+                        </div>
+                        <div class="card-footer bg-custom-color">{{mh.Name}}</div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <button class="btn btn-success m-1" type="submit" ng-click="prev()">Prev</button>
+                <button class="btn btn-success m-1" type="submit" ng-click="next()">Next</button>
+            </ul>
+        </nav>
+    </article>
+    <aside class="col-sm-3">
+        <div class="card mt-2 mb-4">
+            <div class="card-header text-left text-black bg-custom-color">
+                <i class="fas fa-list"></i>
+                <b>DANH MỤC MÔN HỌC</b>
+            </div>
+            <ul class="list-group ">
+                <li class="list-group-item text-left" ng-repeat="mh in cacmonhoc|orderBy:Name"><a
+                        href="#!tracnghiem/{{mh.Id}}/{{mh.Name}}">{{mh.Name|uppercase}}</a></li>
+            </ul>
+        </div>
+    </aside>
+</div>
